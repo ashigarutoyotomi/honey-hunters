@@ -1,0 +1,103 @@
+.header {
+	background: #2D3136;
+	padding: 2% 3%;
+}
+.wrapper__header.container{
+	padding: 0 7%;
+}
+.logo {
+	padding: 2% 0%;
+}
+textarea {
+	resize:  none;
+}
+.inputs {
+	width: 60%;
+}
+input{
+	width: 100%;	
+	background: #2F3338;
+	border-radius: 3%;
+	padding: 3%;
+	box-shadow: none;
+}
+textarea {
+	background: #2F3338;
+	border-radius: 3%;
+
+}
+.form label{
+	color: white;
+	font-size: 2em;
+	font-family: "Roboto";
+}
+textarea:focus{
+	border: none;
+	box-shadow: none;
+	background: #2D3136;
+	border: 3px solid red;
+	outline: none;
+}
+input:focus{
+	border: none;
+	box-shadow: none;
+	background: #2D3136;
+	border: 3px solid red;
+}
+.red {
+	color: red;
+}
+.body{
+	padding: 0 20%;
+}
+.but {
+	width: auto;
+	height: 3em;
+}
+.buthere {
+	padding: 0 21.5%;
+}
+/*comments*/
+.card {
+	width: 33%;
+	padding: 0 0.1%;
+	font-size: 1.5em;
+	border: none;
+	padding: 0 5%;
+	min-width: 280px;
+}
+.cards .card:nth-child(even) .email{
+	color: limegreen;
+}
+.cards .card:nth-child(even) .card__header{
+	color: white;
+	background: limegreen;
+}
+.cards .card:nth-child(even) .card__body{	
+	background: #E9EEF3;
+}
+.cards .card:nth-child(odd) .card__body{
+	background: #E9EEF3;
+}
+.cards .card:nth-child(odd) .card__header{
+	color: white;
+	background: #4B596C;
+}
+.card__body{
+	height: 10em;
+}
+footer {
+	background: #2D3136;
+	padding: 2% 12%;
+	position: relative;
+}
+.circle1, .circle2{
+	border:  1px solid grey;
+	border-radius: 50%;
+	padding: 1%;
+}
+.rit{
+	position: absolute;
+	right: 5%;
+	bottom: 30%;
+}
