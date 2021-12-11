@@ -1,21 +1,33 @@
-let sendbut = document.querySelector("#send");
-let text = document.querySelector("#text");
-let name = document.querySelector("#name");
-let email = document.querySelector("#email");
-sendbut.addEventListener("click",(event)=>{
-	let nameReg = /([^\d])/;
-	let emailReg = /[\w.-_\d]+@(\w{2,12}).(\w{2,5})/;
-	let req = new XMLHttpRequest();
-	req.onreadystatechange = function(){
-		if(this.readystate == 4 && this.status ==200){
-			alert("all done");
-			event.preventDefault();
-		}
-	};
-	req.open("POST","send.php",false);
-	let data = newFormData();
-	data.append("name",name.value);
-	data.append('email',email.value);
-	data.append('text',text.value);
-	req.send(data);
+'use strict';
+let button = document.querySelector(".button");
+let text = document.querySelector("#text").value;
+let imya = document.querySelector("#name").value;
+let email = document.querySelector("#email").value;
+let form = document.querySelector("form");
+form.addEventListener("submit", (event) => {
+    if (imya.match(/(\w\s)+/)) {
+        alert("введите корректное имя");
+    } else if (email.match(/[\w._\d]+@(\w{2,10}).(\w{2,5})/)) {
+        alert("введите корректный емейл");
+    }
+    if (text.length > 500) {
+        alert("too much text");
+        return false;
+    }
+
+    let data = new FormData();
+    data.append("name", imya);
+    data.append("email", email);
+    data.append("text", text);
+    fetch('send.php', {
+        method: POST,
+        body: data
+    }).then(res => { console.log(res) });
+    fetch('get.php').then(response => response.json).then(
+        data => {
+            let comments = JSON.stringify(data);
+            console.log(comments);
+        }
+    )
+    event.preventDefault();
 });
